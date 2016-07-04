@@ -1,11 +1,74 @@
 <div *ngIf="hero">
-  <h2>{{hero.name}} details!</h2>
-  <div>
-    <label>id: </label>{{hero.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name" />
-   </div>
   <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+
+  <div class="form-horizontal container">
+    <form>
+      <div class="row">
+	<div class="col-md-4">
+	<div class="form-group">
+	  <label for="name" class="col-md-4 control-label">Name</label>
+	  <div class="col-md-8">
+	    <input id="name" type="text" placeholder="Name" class="form-control" [(ngModel)]="hero.name">
+	  </div>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+	  <div class="form-group">
+	    <label for="power" class="col-md-4 control-label">Power</label>
+	    <div class="col-md-8">
+	      <select id="power" class="form-control">
+		<option>Fire</option>
+		<option>Strong</option>
+	      </select>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-md-4">
+	<div class="form-group">
+	  <label for="birthday" class="col-md-4 control-label">Birthday</label>
+	  <div class="col-md-8">
+	    <input id="birthday" type="date" class="form-control">
+	  </div>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+	  <div class="form-group">
+	    <label for="height" class="col-md-4 control-label">Height</label>
+	    <div class="col-md-8">
+	      <input type="number" id="height" class="form-control">
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-md-8">
+	  <div class="form-group">
+	    <label for="point" class="col-md-2 control-label">Point</label>
+	    <div class="col-md-10">
+	      <div class="progress" style="margin-top:7px;">
+	      <div class="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%;">
+		60
+	      </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="col-md-2">
+	  <div class="form-group">
+	    <button class="form-control" (click)="save()">Save</button>
+	  </div>
+	</div>
+	
+      </div>
+      
+    </form>
+  </div>
+  
 </div>
